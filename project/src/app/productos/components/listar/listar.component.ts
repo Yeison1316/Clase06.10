@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ChatService } from '../../chat.service';
+
 
 @Component({
   selector: 'app-listar',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./listar.component.css']
 })
 export class ListarComponent {
+
+  constructor(private chat : ChatService){}
+
+  click(){
+    this.chat.set("Mensaje enviado");
+  }
 
 }

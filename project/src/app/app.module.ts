@@ -7,7 +7,7 @@ import { HomeModule } from './home/home.module';
 import { ProductosModule } from './productos/productos.module';
 import { HeaderComponent } from './public/header/header.component';
 import { FooterComponent } from './public/footer/footer.component';
-import {HttpClientModule} from "@angular/common/http"
+import {HttpClient, HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -25,4 +25,4 @@ import {HttpClientModule} from "@angular/common/http"
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChatService } from '../../chat.service';
 
 @Component({
   selector: 'app-crear',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class CrearComponent {
 
+  constructor(public chat : ChatService){}
 }
