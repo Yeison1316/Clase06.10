@@ -1,3 +1,19 @@
-<p>listar works!</p>
-<input class="w-20 h-10 bg-white m-auto">
-<button type="button" class="bg-indigo-500 border-2 border-white rounded-lg" (click)="click()">Enviar</button>
+<div class="p-4 bg-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-semibold mb-4">Detalles del Producto</h2>
+    <div class="mb-4">
+        <p class="text-gray-600 text-sm">Nombre del Producto:</p>
+        <p class="text-xl font-semibold">Nombre del Producto</p>
+    </div>
+    <div class="mb-4">
+        <p class="text-gray-600 text-sm">Descripción del Producto:</p>
+        <p class="text-gray-800">Descripción del Producto</p>
+    </div>
+    <div class="mb-4">
+        <p class="text-gray-600 text-sm">Precio:</p>
+        <p class="text-xl font-semibold text-blue-600">$XX.XX</p>
+    </div>
+    <div class="flex justify-between">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Editar</button>
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">Eliminar</button>
+    </div>
+</div>

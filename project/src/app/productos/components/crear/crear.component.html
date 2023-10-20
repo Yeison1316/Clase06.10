@@ -1,4 +1,19 @@
-<p>crear works!</p>
-<p *ngFor="let list of chat.mensaje">
-    {{list}}
-</p>
+<appheader></appheader>
+<div class="p-4 bg-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-semibold mb-4">Crear Producto</h2>
+    <form>
+        <div class="mb-4">
+            <label for="product-name" class="block text-gray-600 text-sm font-medium">Nombre del Producto</label>
+            <input type="text" id="product-name" name="product-name" class="w-full border-gray-300 rounded-md p-2" placeholder="Escribe el nombre del producto">
+        </div>
+        <div class="mb-4">
+            <label for="product-description" class="block text-gray-600 text-sm font-medium">Descripción del Producto</label>
+            <textarea id="product-description" name="product-description" class="w-full border-gray-300 rounded-md p-2" rows="4" placeholder="Escribe la descripción del producto"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="product-price" class="block text-gray-600 text-sm font-medium">Precio</label>
+            <input type="text" id="product-price" name="product-price" class="w-full border-gray-300 rounded-md p-2" placeholder="Precio del producto">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white font-semibold p-2 rounded-md hover:bg-blue-600 transition duration-300">Guardar Producto</button>
+    </form>
+</div>
