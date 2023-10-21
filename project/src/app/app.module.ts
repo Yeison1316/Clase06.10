@@ -7,7 +7,8 @@ import { HomeModule } from './home/home.module';
 import { ProductosModule } from './productos/productos.module';
 import { HeaderComponent } from './public/header/header.component';
 import { FooterComponent } from './public/footer/footer.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http"
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http"
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http"
     //HomeModule,
     //ProductosModule
   ],
-  providers: [],
+  providers: [{provide : HTTP_INTERCEPTORS, useClass : AuthInterceptor, multi : true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

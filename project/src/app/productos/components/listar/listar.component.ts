@@ -7,6 +7,7 @@ import { ChatService } from '../../chat.service';
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
+
 export class ListarComponent {
 
   constructor(private chat : ChatService){}
@@ -14,5 +15,4 @@ export class ListarComponent {
   click(){
     this.chat.set("Mensaje enviado");
   }
-
 }
