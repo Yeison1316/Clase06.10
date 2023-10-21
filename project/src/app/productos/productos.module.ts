@@ -7,6 +7,7 @@ import { CrearComponent } from './components/crear/crear.component';
 import { EliminarComponent } from './components/eliminar/eliminar.component';
 import { ListarComponent } from './components/listar/listar.component';
 import { ProductoComponent } from './pages/producto/producto.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ProductoComponent } from './pages/producto/producto.component';
     CrearComponent,
     EliminarComponent,
     ListarComponent,
-    ProductoComponent
+    ProductoComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChatService } from '../../chat.service';
+import { ProductoServiceService } from '../../producto-service.service';
 
 
 @Component({
@@ -10,9 +10,9 @@ import { ChatService } from '../../chat.service';
 
 export class ListarComponent {
 
-  constructor(private chat : ChatService){}
+  constructor(private productoHttp :ProductoServiceService){}
 
   click(){
-    this.chat.set("Mensaje enviado");
+    
   }
 }

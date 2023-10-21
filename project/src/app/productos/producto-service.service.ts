@@ -9,11 +9,12 @@ export class ProductoServiceService {
   constructor(private http: HttpClient) { }
 
   baseUrl = "https://api.escuelajs.co/api/v1/products";
+
   getAll(){
     return this.http.get(this.baseUrl);
   }
   getOne(){
-
+    return this.http.get("https://api.escuelajs.co/api/v1/products/+")
   }
   postProducto(){
 
