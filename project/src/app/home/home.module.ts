@@ -8,6 +8,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,

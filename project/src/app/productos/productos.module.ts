@@ -8,7 +8,7 @@ import { EliminarComponent } from './components/eliminar/eliminar.component';
 import { ListarComponent } from './components/listar/listar.component';
 import { ProductoComponent } from './pages/producto/producto.component';
 import { HeaderComponent } from './header/header.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     CommonModule,
-    ProductosRoutingModule
+    ProductosRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductosModule { }

@@ -13,8 +13,8 @@ export class ProductoServiceService {
   getAll(){
     return this.http.get(this.baseUrl);
   }
-  getOne(){
-    return this.http.get("https://api.escuelajs.co/api/v1/products/+")
+  getOne(id: string){
+    return this.http.get("https://api.escuelajs.co/api/v1/products/"+id)
   }
   postProducto(){
 

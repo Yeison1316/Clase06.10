@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder} from '@angular/forms'
 import { AuthService } from '../../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import { AuthService } from '../../service/auth.service';
 })
 export class LoginComponent {
 
-  constructor(private fb: FormBuilder ,private ser : AuthService){}
+  constructor(private fb: FormBuilder ,private ser : AuthService, private router:Router){}
+
 
   form = this.fb.group({
     email : [''],
@@ -25,9 +27,10 @@ submit(){
   this.ser.getToken(this.form.value).subscribe((res : any) :void =>{
     console.log(res);
     localStorage.setItem('token_auth',res.access_token);
+    this.router.navigate(['producto']);
   },
   (err)=>{
-    console.log(err)
+    console.log(err);
   })
 }
 

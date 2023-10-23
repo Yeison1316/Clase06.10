@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { producto } from '../../pages/producto/producto';
+import { ProductoServiceService } from '../../producto-service.service';
 
 @Component({
   selector: 'app-actualizar',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class ActualizarComponent {
 
+  constructor(private productoHttp :ProductoServiceService){}
 }
