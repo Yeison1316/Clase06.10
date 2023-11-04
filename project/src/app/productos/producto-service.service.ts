@@ -15,15 +15,18 @@ export class ProductoServiceService {
     return this.http.get(this.baseUrl);
   }
   getOne(id: string){
-    return this.http.get("https://api.escuelajs.co/api/v1/products/"+id)
+    return this.http.get(`${environment.uri}/products/`+id);
   }
   postProducto(){
-
+    
   }
   putProducto(){
 
   }
   deleteProducto(){
 
+  }
+  getCategory(){
+    return this.http.get(`${environment.uri}/categories`);
   }
 }

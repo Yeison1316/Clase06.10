@@ -19,6 +19,7 @@
                 <img src="{{producto.images[0]}}" alt="Producto 1" class="w-auto h-48 object-cover m-auto shadow-xl">
                 <div class="p-6">
                     <h2 class="text-2xl font-semibold">{{producto.title}}</h2>
+                    <h2 class="mt-2 text-sm font-semibold text-slate-400">{{producto.category.name}}</h2>
                     <p class="mt-2 text-gray-600">{{producto.description}}</p>
                     <p class="mt-2 text-xl font-bold text-blue-600">$ {{producto.price}} </p>
                     <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Agregar al Carrito</button>

@@ -17,7 +17,7 @@ export class ListarComponent {
   
   constructor(private productoHttp :ProductoServiceService, private fb : FormBuilder){}
 
-  producto : producto = {id:0,title:"",price:0,description:"",categoria:0,images:[]};
+  producto : producto = {id:0,title:"",price:0,description:"",category:{id:0,name:"",image:""},images:[]};
   form = this.fb.group({
     id : ['']
   })
