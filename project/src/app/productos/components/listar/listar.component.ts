@@ -19,7 +19,7 @@ export class ListarComponent {
 
   producto : producto = {id:0,title:"",price:0,description:"",category:{id:0,name:"",image:""},images:[]};
   form = this.fb.group({
-    id : ['']
+    id: ['']
   })
   submit(){
     this.productoHttp.getOne(this.form.value.id!).subscribe((res : any)=>{

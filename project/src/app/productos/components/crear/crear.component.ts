@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoServiceService } from '../../producto-service.service';
 import { category } from '../../category';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-crear',
@@ -9,13 +10,24 @@ import { category } from '../../category';
 })
 export class CrearComponent implements OnInit{
 
-  constructor(private productoHttp :ProductoServiceService){}
-  categorys : category = {id:0,name:"",image:""};
-
+  form = new FormGroup({
+    title : new FormControl(''),
+    category : new FormControl(''),
+    price : new FormControl(''),
+    description : new FormControl(''),
+    images : new FormControl('')
+  })
+  constructor(private productoHttp :ProductoServiceService,  private fb : FormBuilder){}
+  Cate : category[ ] = [ ] 
   ngOnInit(): void {
     this.productoHttp.getCategory().subscribe((res :any) => {
-      this.categorys = res;
-      console.log(this.categorys);
+      this.Cate = res;
+    })
+  }
+  
+  submit(){
+    this.productoHttp.postProducto(this.form).subscribe(data =>{
+      console.log(data)
     })
   }
   }
