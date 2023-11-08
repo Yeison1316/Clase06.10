@@ -15,16 +15,38 @@ import { Router } from '@angular/router';
 export class ListarComponent {
 
   
-  constructor(private productoHttp :ProductoServiceService, private fb : FormBuilder){}
+  constructor(private productoHttp :ProductoServiceService, private fb : FormBuilder,private route:Router){}
 
   producto : producto = {id:0,title:"",price:0,description:"",category:{id:0,name:"",image:""},images:[]};
   form = this.fb.group({
     id: ['']
   })
   submit(){
-    this.productoHttp.getOne(this.form.value.id!).subscribe((res : any)=>{
-      this.producto = res;
-    })
+    const formData = this.form.value; 
+    if(formData.id != ""){
+        this.productoHttp.getOne(this.form.value.id!).subscribe((res : any)=>{
+          this.producto = res;
+        },
+        (error)=>{
+          alert("Error al Buscar el producto")
+        });
+    }else{
+      alert ("Debes ingresar un id para realizar la busqueda")
+    }
+    
   }
+   actualizar: ActualizarComponent | undefined;
 
+  actualiza(){
+    if(this.producto.id != 0){
+      this.route.navigate(['./producto/actualizar',this.producto]);
+    }else
+    alert("Debes buscar el producto que deseas editar")
+  }
+  eliminar(){
+    if(this.producto.id != 0){
+      this.route.navigate(['./producto/eliminar',this.producto]);
+    }else
+    alert("Debes buscar el productos que deseas eliminar")
+  }
 }

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { FormGroup } from '@angular/forms';
+import { producto } from './pages/producto/producto';
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +23,11 @@ export class ProductoServiceService {
     return this.http.post<Response>(`${environment.uri}/products/`,form);
 
   }
-  putProducto(){
-
+  putProducto(id:string,form:producto){
+    return this.http.put<Response>(`${environment.uri}/products/`+id,form);
   }
-  deleteProducto(){
-
+  deleteProducto(id:string){
+    return this.http.delete(`${environment.uri}/products/`+id);
   }
   getCategory(){
     return this.http.get(`${environment.uri}/categories`);

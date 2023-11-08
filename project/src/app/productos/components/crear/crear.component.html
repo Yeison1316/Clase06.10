@@ -5,12 +5,15 @@
     <form (submit)="submit()" [formGroup]="form">
         <div class="mb-4">
             <label for="product-name" class="block text-gray-600 text-sm font-medium">Nombre del Producto</label>
-            <input type="text" formControlName="title" id="product-name" name="product-name" class="w-full border-gray-300 rounded-md p-2" placeholder="Escribe el nombre del producto">
+            <input type="text" formControlName="title" id="product-name"  class="w-full border-gray-300 rounded-md p-2" placeholder="Escribe el nombre del producto">
+            <div *ngIf="form.get('title')?.hasError('invalidTitle')">
+                El título es inválido.
+              </div> 
         </div>
         <div class="mb-4">
             <label for="product-category" class="block text-gray-600 text-sm font-medium">Categoria del producto</label>
-            <select name="product-category"  formControlName="category" id="product-category" class="w-full border-gray-300 rounded-md p-2" rows="4" placeholder="escoja la Categoria">
-                <option *ngFor="let category of Cate" value="{{category.id}}">{{category.name}}</option>
+            <select name="product-category"  formControlName="categoryId" id="product-category" class="w-full border-gray-300 rounded-md p-2" rows="4" placeholder="Escoja la Categoria">
+                <option *ngFor="let category of Cate" value={{category.id}}>{{category.name}}</option>
             </select>
         </div>
         <div class="mb-4">
@@ -19,11 +22,11 @@
         </div>
         <div class="mb-4">
             <label for="product-price" class="block text-gray-600 text-sm font-medium">Precio</label>
-            <input type="text" id="product-price" formControlName="price" name="product-price" class="w-full border-gray-300 rounded-md p-2" placeholder="Precio del producto">
+            <input type="number" id="product-price" formControlName="price" class="w-full border-gray-300 rounded-md p-2" placeholder="Precio del producto">
         </div>
         <div class="mb-4">
             <label for="product-image" class="block text-gray-600 text-sm font-medium">Imagen</label>
-            <input type="text" id="product-image" formControlName="images" name="product-image" class="w-full border-gray-300 rounded-md p-2" placeholder="url de la imagen ">
+            <input type="text" id="product-image" formControlName="images"  class="w-full border-gray-300 rounded-md p-2" placeholder="url de la imagen ">
         </div>
         <button type="submit" class="w-full bg-blue-500 text-white font-semibold p-2 rounded-md hover:bg-blue-600 transition duration-300">Guardar Producto</button>
     </form>

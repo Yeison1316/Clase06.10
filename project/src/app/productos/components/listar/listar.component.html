@@ -28,9 +28,9 @@
             <p class="text-xl font-semibold text-blue-600">$ {{producto.price}}</p>
         </div>
         <div class="flex justify-between">
-            <button routerLink="/producto/actualizar"
+            <button (click)="actualiza()"
                 class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition duration-300">Editar</button>
-            <button routerLink="/producto/eliminar"
+            <button (click)="eliminar()"
                 class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">Eliminar</button>
         </div>
     </div>
