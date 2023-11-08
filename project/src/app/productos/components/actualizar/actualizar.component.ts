@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { producto } from '../../pages/producto/producto';
 import { ProductoServiceService } from '../../producto-service.service';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { category } from '../../category';
 
@@ -14,7 +14,7 @@ export class ActualizarComponent implements OnInit{
   form : FormGroup;
   datos! : producto;
   id!: string;
-  constructor(private productoHttp :ProductoServiceService,private route:ActivatedRoute,private fb : FormBuilder){
+  constructor(private productoHttp :ProductoServiceService,private route:ActivatedRoute,private fb : FormBuilder,private router:Router){
     this.form = this.fb.group({
       title : "",
       categoryId :0,
@@ -41,7 +41,8 @@ export class ActualizarComponent implements OnInit{
     const formData = this.form.value;
     formData.images = [formData.images];
     this.productoHttp.putProducto(this.id,formData).subscribe(data=>{
-      alert("Producto actualizado")
+      alert("Producto actualizado");
+      this.router.navigate(['./producto/listar']);
     },
     (error)=>{
       alert("Error al actualizar el producto")

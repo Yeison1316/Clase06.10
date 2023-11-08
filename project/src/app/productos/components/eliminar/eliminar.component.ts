@@ -20,8 +20,8 @@ export class EliminarComponent implements OnInit{
   
   eliminar(){
     this.productoHttp.deleteProducto(this.id).subscribe(()=>{
-      alert("Se elimino con exito el producto")
-       this.route.navigate(['./productos/listar']);
+        alert("Se elimino con exito el producto");
+       this.route.navigate(['./producto/listar']);
     },
     (error)=>{
       alert("Error al eliminar el producto")
