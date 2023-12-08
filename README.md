@@ -57,9 +57,9 @@ src\
 
 <code>GET /auth</code> 
 - **query:** 
-    - **username**:  requerido
-    - **password**:  requerido
-
+    - **username**:  requerido :**jhon@email.com**
+    - **password**:  requerido :**changeme**
+ 
 <code>GET /api/producto</code> 
 - Request
     - **query**
