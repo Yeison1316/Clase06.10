@@ -63,14 +63,9 @@ src\
 <code>GET /api/producto</code> 
 - Request
     - **query**
-        - **page**
-        - **limit**
 - Response
     - **success:** boolean   
     - **msg :** string
-    - **count:** number
-    - **page :** number
-    - **all :** number
     - **data :** array
  
 <code>GET /api/producto/:id</code> 
@@ -84,11 +79,12 @@ src\
     
 <code>POST /api/producto</code>
 - Request
-    - **body:**
-        - **nombre** :  requerido
-        - **detalle**
-        - **valor** :  requerido
-        - **img**
+   - **body:**
+        - **title** : requerido
+        - **price** : requerido
+        - **description** : requerido
+        - **category_id** : requerido
+        - **images** : requerido
 - Response
     - **success :** boolean
     - **data :** json
@@ -96,12 +92,14 @@ src\
 
 <code>PUT /api/producto</code>
 - Request
-    - **body**
+    - **body:**
         - **id** :  requerido
-        - **nombre**
-        - **detalle**
-        - **valor**
-        - **img**
+    - **params:**
+        - **title** : requerido
+        - **price** : requerido
+        - **description** : requerido
+        - **category_id** : requerido
+        - **images** : requerido
 - Response
     - **success :** boolean
     - **data :** json
