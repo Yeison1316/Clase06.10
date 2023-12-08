@@ -93,7 +93,7 @@ src\
 <code>PUT /api/producto</code>
 - Request
     - **body:**
-        - **id** :  requerido
+        - **title** :  requerido
     - **params:**
         - **title** : requerido
         - **price** : requerido
