@@ -4,6 +4,7 @@ import { ProductoServiceService } from '../../producto-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { category } from '../../category';
+import { titleValidator, descriptionValidator, priceValidator, imagesValidator, categoryIdValidator } from '../Validators/product-form.validators';
 
 @Component({
   selector: 'app-actualizar',
@@ -16,11 +17,11 @@ export class ActualizarComponent implements OnInit{
   id!: string;
   constructor(private productoHttp :ProductoServiceService,private route:ActivatedRoute,private fb : FormBuilder,private router:Router){
     this.form = this.fb.group({
-      title : "",
-      category_id :0,
-      price : 0,
-      description: "",
-      images : [""]
+      title : ["",[titleValidator]],
+      price : [0,[priceValidator]],
+      category_id : [0,[categoryIdValidator]],
+      description: ["",[descriptionValidator]],
+      images : ["",[imagesValidator]]
     })
   }
   Cate : category [] =[];
