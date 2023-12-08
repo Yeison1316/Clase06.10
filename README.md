@@ -57,9 +57,9 @@ src\
 
 <code>GET /auth</code> 
 - **query:** 
-    - **username**:  requerido
-    - **password**:  requerido
-
+    - **username**:  requerido :**jhon@email.com**
+    - **password**:  requerido :**changeme**
+ 
 <code>GET /api/producto</code> 
 - Request
     - **query**
@@ -93,7 +93,7 @@ src\
 <code>PUT /api/producto</code>
 - Request
     - **body:**
-        - **id** :  requerido
+        - **title** :  requerido
     - **params:**
         - **title** : requerido
         - **price** : requerido
