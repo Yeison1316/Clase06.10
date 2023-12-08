@@ -17,7 +17,7 @@ export class ActualizarComponent implements OnInit{
   constructor(private productoHttp :ProductoServiceService,private route:ActivatedRoute,private fb : FormBuilder,private router:Router){
     this.form = this.fb.group({
       title : "",
-      categoryId :0,
+      category_id :0,
       price : 0,
       description: "",
       images : [""]
@@ -26,12 +26,12 @@ export class ActualizarComponent implements OnInit{
   Cate : category [] =[];
   ngOnInit(): void {
     this.productoHttp.getCategory().subscribe((res :any) => {
-      this.Cate = res;
+      this.Cate = res.data;
     })
   this.route.params.subscribe(params =>{
     const date = params;
-    const {title,categoryId,price,description,images} = params;
-    this.form.patchValue({title,categoryId,price,description,images})
+    const {title,category_id,price,description,images} = params;
+    this.form.patchValue({title,category_id,price,description,images})
     this.datos = this.form.value;
     this.id = date['id'];
     

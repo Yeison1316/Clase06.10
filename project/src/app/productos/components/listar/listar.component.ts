@@ -25,9 +25,11 @@ export class ListarComponent {
     const formData = this.form.value; 
     if(formData.id != ""){
         this.productoHttp.getOne(this.form.value.id!).subscribe((res : any)=>{
-          this.producto = res;
+          console.log (res.data)
+          this.producto = res.data[0];
         },
         (error)=>{
+          console.log(error)
           alert("Error al Buscar el producto")
         });
     }else{

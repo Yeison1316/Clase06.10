@@ -26,7 +26,7 @@ submit(){
   console.log(this.form.value);
   this.ser.getToken(this.form.value).subscribe((res : any) :void =>{
     console.log(res);
-    localStorage.setItem('token_auth',res.access_token);
+    localStorage.setItem('token_auth',res.token);
     this.router.navigate(['producto']);
   },
   (err)=>{

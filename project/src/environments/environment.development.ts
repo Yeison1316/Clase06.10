@@ -1,3 +1,3 @@
 export const environment = {
-    uri : "https://api.escuelajs.co/api/v1"
+    uri : "https://product-service-8zwd.onrender.com/"
 };

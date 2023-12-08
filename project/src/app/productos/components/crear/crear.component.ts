@@ -16,7 +16,7 @@ export class CrearComponent implements OnInit{
   constructor(private productoHttp :ProductoServiceService,  private fb : FormBuilder){
     this.form = this.fb.group({
       title : ["",[titleValidator]],
-      categoryId :0,
+      category_id :0,
       price : [0,[priceValidator]],
       description: ["",[descriptionValidator]],
       images : ["",[imagesValidator]]
@@ -25,7 +25,7 @@ export class CrearComponent implements OnInit{
   Cate : category[ ] = [ ] 
   ngOnInit(): void {
     this.productoHttp.getCategory().subscribe((res :any) => {
-      this.Cate = res;
+      this.Cate = res.data;
     })
   }
   
@@ -36,6 +36,7 @@ export class CrearComponent implements OnInit{
       console.log(formData)
       this.productoHttp.postProducto(formData).subscribe(data =>{
         console.log(data)
+        this.form.reset();
       },
       (error)=>{
         alert("Error al Crear el producto")

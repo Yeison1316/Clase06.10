@@ -12,7 +12,7 @@
         </div>
         <div class="mb-4">
             <label for="product-category" class="block text-gray-600 text-sm font-medium">Categoria del producto</label>
-            <select name="product-category"  formControlName="categoryId" id="product-category" class="w-full border-gray-300 rounded-md p-2" rows="4" placeholder="Escoja la Categoria">
+            <select name="product-category"  formControlName="category_id" id="product-category" class="w-full border-gray-300 rounded-md p-2" rows="4" placeholder="Escoja la Categoria">
                 <option *ngFor="let category of Cate" value={{category.id}}>{{category.name}}</option>
             </select>
         </div>

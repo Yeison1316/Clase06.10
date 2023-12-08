@@ -3,7 +3,7 @@
     <div class="mb-4">
         <form (submit)="submit()" [formGroup]="form">
             <label for="id" class="block text-gray-600 text-sm font-medium">ID del producto</label>
-            <input type="number" id="id" formControlName="id" name="id" class="w-full border-gray-300 rounded-md p-2"
+            <input type="text" id="id" formControlName="id" name="id" class="w-full border-gray-300 rounded-md p-2"
                 placeholder="Ingrese la id del producto que desea Buscar">
             <button type="submit"
                 class="mt-5 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Listar</button>

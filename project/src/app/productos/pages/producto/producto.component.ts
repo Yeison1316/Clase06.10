@@ -13,7 +13,7 @@ export class ProductoComponent implements OnInit{
   constructor (private productoHttp :ProductoServiceService){}
   ngOnInit(){
     this.productoHttp.getAll().subscribe((res:any)=>{
-      this.productos = res;
+      this.productos = res.data;
     })   
   }
 

@@ -11,25 +11,25 @@ export class ProductoServiceService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = `${environment.uri}/products`;
+  baseUrl = `${environment.uri}producto`;
 
   getAll(){
     return this.http.get(this.baseUrl);
   }
   getOne(id: string){
-    return this.http.get(`${environment.uri}/products/`+id);
+    return this.http.get(`${environment.uri}producto/`+id);
   }
   postProducto(form:FormGroup){
-    return this.http.post<Response>(`${environment.uri}/products/`,form);
+    return this.http.post<Response>(`${environment.uri}producto/`,form);
 
   }
   putProducto(id:string,form:producto){
-    return this.http.put<Response>(`${environment.uri}/products/`+id,form);
+    return this.http.put<Response>(`${environment.uri}producto/`+id,form);
   }
   deleteProducto(id:string){
-    return this.http.delete(`${environment.uri}/products/`+id);
+    return this.http.delete(`${environment.uri}producto/`+id);
   }
   getCategory(){
-    return this.http.get(`${environment.uri}/categories`);
+    return this.http.get(`${environment.uri}categories`);
   }
 }
